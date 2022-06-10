@@ -11,7 +11,7 @@ from numpy import random
 
 app = dash.Dash()
 
-df = pd.read_csv('../data/mpg.csv')
+df = pd.read_csv('Data/mpg.csv')
 # Add a random "jitter" to model_year to spread out the plot
 df['year'] = random.randint(-4,5,len(df))*0.10 + df['model_year']
 
@@ -37,4 +37,4 @@ app.layout = html.Div([
 ])
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)

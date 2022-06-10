@@ -2,8 +2,7 @@
 # A very basic Input/Output callback, with State!
 ######
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import html, dcc
 from dash.dependencies import Input, Output, State
 
 app = dash.Dash()
@@ -28,7 +27,7 @@ app.layout = html.Div([
     [Input('submit-button', 'n_clicks')],
     [State('number-in', 'value')])
 def output(n_clicks, number):
-    return number
+    return number*2
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)

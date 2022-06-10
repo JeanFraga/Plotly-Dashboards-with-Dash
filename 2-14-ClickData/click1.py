@@ -8,11 +8,11 @@ import base64
 
 app = dash.Dash()
 
-df = pd.read_csv('../data/wheels.csv')
+df = pd.read_csv('Data/wheels.csv')
 
 def encode_image(image_file):
     encoded = base64.b64encode(open(image_file, 'rb').read())
-    return 'data:image/png;base64,{}'.format(encoded.decode())
+    return 'data:images/png;base64,{}'.format(encoded.decode())
 
 app.layout = html.Div([
     html.Div([
@@ -52,9 +52,9 @@ app.layout = html.Div([
 def callback_image(clickData):
     wheel=clickData['points'][0]['y']
     color=clickData['points'][0]['x']
-    path = '../data/images/'
+    path = 'Data/Images/'
     return encode_image(path+df[(df['wheels']==wheel) & \
     (df['color']==color)]['image'].values[0])
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)

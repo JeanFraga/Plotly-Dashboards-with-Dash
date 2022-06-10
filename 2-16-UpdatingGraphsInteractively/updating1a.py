@@ -10,7 +10,7 @@ import pandas as pd
 
 app = dash.Dash()
 
-df = pd.read_csv('../data/mpg.csv')
+df = pd.read_csv('Data/mpg.csv')
 
 app.layout = html.Div([
     dcc.Graph(

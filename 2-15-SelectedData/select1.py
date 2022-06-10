@@ -12,7 +12,7 @@ import json
 
 app = dash.Dash()
 
-df = pd.read_csv('../data/wheels.csv')
+df = pd.read_csv('Data/wheels.csv')
 
 app.layout = html.Div([
     html.Div([
@@ -50,7 +50,7 @@ app.layout = html.Div([
     Output('selection', 'children'),
     [Input('wheels-plot', 'selectedData')])
 def callback_image(selectedData):
-    return json.dumps(selectedData, indent=2)
+    return json.dumps(selectedData, indent=0)
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)

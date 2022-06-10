@@ -18,7 +18,7 @@ import pandas as pd
 app = dash.Dash()
 
 # Create a DataFrame from the .csv file:
-df = pd.read_csv('../data/OldFaithful.csv')
+df = pd.read_csv('data/OldFaithful.csv')
 
 # Create a Dash layout that contains a Graph component:
 app.layout = html.Div([
